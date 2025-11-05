@@ -1,0 +1,13 @@
+# From project root
+flutter upgrade
+flutter config --enable-macos-desktop
+flutter create .              # generates ./macos if missing
+
+# Make sure pubspec is updated (intl ^0.20.2, hive, hive_flutter, riverpod)
+flutter clean
+flutter pub get
+
+# Run on macOS (or Chrome if you prefer)
+flutter run -d macos
+# or
+flutter run -d chrome
