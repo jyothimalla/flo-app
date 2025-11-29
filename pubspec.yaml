@@ -1,0 +1,28 @@
+name: flo_app
+description: A starter Flutter app for the Flo project.
+publish_to: 'none'
+
+version: 0.1.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^2.6.1
+  # riverpod: ^2.6.1   # optional; remove unless you import 'package:riverpod/riverpod.dart'
+  cupertino_icons: ^1.0.5
+  shared_preferences: ^2.2.3
+  intl: ^0.20.2
+  table_calendar: ^3.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/illustrations/

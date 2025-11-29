@@ -1,0 +1,25 @@
+# Flutter/Dart/Pub related
+.dart_tool/
+.packages
+.packages.json
+.pub/
+
+# Generated files
+/build/
+/ios/Flutter/Flutter.framework
+/ios/Runner/GeneratedPluginRegistrant.*
+
+# IntelliJ related
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Android
+/*.iml
+/local.properties
+**/generated/

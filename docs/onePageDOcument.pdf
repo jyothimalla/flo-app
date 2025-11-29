@@ -1,0 +1,336 @@
+Flo App – Product Specification (MVP)
+
+You can use this as your main Notion page or project document.
+
+1. Product Overview
+
+Product name: Flo App
+Type: Menstrual cycle tracking app
+Goal: Help users track their periods, see them on a calendar, get simple predictions, and view basic cycle analysis — all offline on their device.
+
+2. MVP Objectives
+
+The MVP should allow a user to:
+
+Log period start and end dates
+
+View these logs on a calendar
+
+See a predicted next period date
+
+View basic analysis (average cycle length, average period length, last cycle summary, regular/irregular)
+
+Manage a simple profile (age + dark mode theme)
+
+No login, no backend, all data stored locally.
+
+3. Epics Summary
+Epic ID	Epic Name	Short Description
+E1	Period Tracking	Log, edit, delete period data with confirmations
+E2	Calendar	Visual calendar with highlighted period and predicted days
+E3	Predictions	Estimate and show the next period date
+E4	Analysis	Show key stats and regularity of cycles
+E5	Profile	Basic user preferences (age, theme)
+4. Detailed Epics & User Stories
+🟥 Epic E1 – Period Tracking
+
+Goal: Let users keep accurate and clean period data.
+
+Story E1-S1 – Edit Period Start Date
+As a user, I want to edit my period start date so that the app can give accurate predictions.
+
+Story Points: 3
+
+Acceptance Criteria:
+
+User can change the start date of a logged period.
+
+Updated date is saved in local storage.
+
+Calendar view reflects the updated date.
+
+Predictions update based on the new date.
+
+A success message is shown after updating.
+
+Story E1-S2 – Delete Wrong Period Log
+As a user, I want to delete a wrong period log so that my cycle data stays clean and predictions stay correct.
+
+Story Points: 2
+
+Acceptance Criteria:
+
+User can see a list or view where a period log can be selected.
+
+User can delete a log only after a confirmation step.
+
+Deleted logs no longer appear in the calendar or analysis.
+
+Predictions recalculate without that log.
+
+A success message confirms deletion.
+
+Story E1-S3 – Confirmation After Logging
+As a user, I want to see a confirmation message after logging my period so that I know it was saved successfully.
+
+Story Points: 1
+
+Acceptance Criteria:
+
+After logging start or end date, a small confirmation message is shown.
+
+The message disappears automatically after a short time.
+
+The new log is immediately visible on the calendar.
+
+🟩 Epic E2 – Calendar
+
+Goal: Provide a clear visual view of period history and selected dates.
+
+Story E2-S1 – Highlight Period Days
+As a user, I want to see my period days highlighted on the calendar so that I can easily understand my cycle history.
+
+Story Points: 3
+
+Acceptance Criteria:
+
+All logged period dates are highlighted (for example with a colored marker).
+
+Past cycles remain visible when navigating to older months.
+
+Highlights do not conflict with predicted dates or today’s marker.
+
+Story E2-S2 – Navigate Months
+As a user, I want to move to previous and next months so that I can review past and future dates.
+
+Story Points: 1
+
+Acceptance Criteria:
+
+User can move to previous and next months using arrows or swipe.
+
+Calendar updates without lag or crash.
+
+Highlights remain correct after navigation.
+
+Story E2-S3 – Tap to Select Date
+As a user, I want to tap a date on the calendar so that I can quickly log or edit my period.
+
+Story Points: 2
+
+Acceptance Criteria:
+
+Tapping a date marks it as “selected”.
+
+When a date is selected, user gets an option to log or edit period data for that date.
+
+Selection is visually clear and unambiguous.
+
+Story E2-S4 – Today Marker
+As a user, I want today clearly marked so that I never lose track of the current date.
+
+Story Points: 1
+
+Acceptance Criteria:
+
+Today’s date is visually different (border/colour).
+
+Marker remains correct when navigating months.
+
+🟦 Epic E3 – Predictions
+
+Goal: Show a simple next period prediction based on past data.
+
+Story E3-S1 – Next Expected Period Date
+As a user, I want to see my next expected period date so that I can plan ahead.
+
+Story Points: 3
+
+Acceptance Criteria:
+
+App calculates a predicted next period start date.
+
+The prediction is visible on the home or main screen.
+
+If there is not enough data, an informative message is shown instead.
+
+Story E3-S2 – Use Past Cycles for Estimation
+As a user, I want the app to use my past cycles to estimate my next cycle so that predictions are personalised.
+
+Story Points: 2
+
+Acceptance Criteria:
+
+App calculates cycle lengths from logged cycles.
+
+An average cycle length is computed from available data.
+
+Logic works even with only 1–2 cycles, though it may be less accurate.
+
+Story E3-S3 – Highlight Predicted Dates on Calendar
+As a user, I want predicted dates highlighted in a different colour so that I can easily separate predictions from real logs.
+
+Story Points: 2
+
+Acceptance Criteria:
+
+Predicted dates are visually distinct from actual logged periods.
+
+A small legend or label explains the meaning of the predicted colour.
+
+When prediction changes, the highlight updates.
+
+Story E3-S4 – Auto-Update Predictions
+As a user, I want predictions to update automatically when I edit any period dates so that results stay accurate.
+
+Story Points: 1
+
+Acceptance Criteria:
+
+Any edit or deletion of period logs triggers recalculation.
+
+Updated prediction appears without needing app restart.
+
+🟪 Epic E4 – Analysis
+
+Goal: Provide simple but useful cycle insights.
+
+Story E4-S1 – Average Cycle Length
+As a user, I want to see my average cycle length so that I can understand my overall pattern.
+
+Story Points: 2
+
+Acceptance Criteria:
+
+App computes cycle length between period starts.
+
+Shows the average in days (e.g. “Average cycle length: 28 days”).
+
+Recalculates when new data is added or edited.
+
+Story E4-S2 – Average Period Length
+As a user, I want to see my average period length so that I know what is normal for me.
+
+Story Points: 2
+
+Acceptance Criteria:
+
+Period length is computed as end date – start date + 1.
+
+Average period length is displayed in days.
+
+Updates when logs change.
+
+Story E4-S3 – Last Cycle Summary
+As a user, I want to see information about my latest cycle so that I can track changes easily.
+
+Story Points: 1
+
+Acceptance Criteria:
+
+Shows last cycle start date, end date, and duration.
+
+Reflects any edits made to the latest log.
+
+Story E4-S4 – Regular vs Irregular Indicator
+As a user, I want to know if my cycles are regular or irregular so that I can understand my health better.
+
+Story Points: 3
+
+Acceptance Criteria:
+
+App calculates variation in cycle length.
+
+Uses a simple rule (e.g. variation less than ~3 days = regular).
+
+Shows a label like “Regular” or “Irregular” with green/orange colour.
+
+Updates automatically when logs change.
+
+🟧 Epic E5 – Profile
+
+Goal: Store simple user preferences to personalise the app.
+
+Story E5-S1 – Update Age
+As a user, I want to update my age in the profile so that my information stays accurate.
+
+Story Points: 1
+
+Acceptance Criteria:
+
+Age can be entered or edited in a profile screen.
+
+Age is saved locally and shown when reopening the app.
+
+Invalid values are handled gracefully (e.g. ignoring empty input).
+
+Story E5-S2 – Dark Mode Theme
+As a user, I want to switch the app theme to dark so that it feels comfortable for my eyes.
+
+Story Points: 3
+
+Acceptance Criteria:
+
+A toggle or option allows switching between light and dark themes.
+
+Theme changes immediately across all screens.
+
+Selected theme is remembered even after app restart.
+
+5. Roadmap
+
+This is a simple view of how features grow over time.
+
+🟢 MVP – Version 0.1.0
+
+Focus: Basic but usable tracker
+
+Period logging (start & end)
+
+Calendar with highlighted period days
+
+Simple next period prediction
+
+Basic analysis (average cycle length & period length, last cycle summary, simple regularity)
+
+Profile: age and dark mode
+
+🔵 Version 1.0 – Polished App
+
+Focus: Improve experience
+
+Better UI styling and layout
+
+History page with a list of past cycles
+
+Edit end dates more flexibly
+
+Slightly smarter prediction logic
+
+Simple charts in analysis (e.g. cycle length trend)
+
+🟣 Version 2.0 – Advanced App
+
+Focus: More depth and personalisation
+
+Mood tracking
+
+Symptom tracking (cramps, headache, etc.)
+
+Reminders/notifications (e.g. “Period may start in 2 days”)
+
+More theme options
+
+Basic onboarding when app is opened first time
+
+6. Technical Notes (High Level)
+
+Platform: Flutter
+
+Data storage: Local (Hive)
+
+State handling: AppState model (can be used with Riverpod or setState)
+
+Calendar: table_calendar package
+
+No backend / No login in MVP
